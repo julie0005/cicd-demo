@@ -48,4 +48,4 @@ jobs:
         run: aws s3 cp --region ap-northeast-2 ./$GITHUB_SHA.zip s3://aws-community-demo-build/$PROJECT_NAME/$GITHUB_SHA.zip
 
       - name: Code Deploy to Auto Scaling Group
-        run: aws deploy create-deployment --application-name demo-deploy --deployment-config-name CodeDeployDefault.AllAtOnce --deployment-group-name scaled --s3-location bucket=aws-community-demo-build,bundleType=zip,key=$PROJECT_NAME/$GITHUB_SHA.zip
+        run: aws deploy create-deployment --application-name demo-deploy --deployment-config-name CodeDeployDefault.AllAtOnce --deployment-group-name demo-was --s3-location bucket=aws-community-demo-build,bundleType=zip,key=$PROJECT_NAME/$GITHUB_SHA.zip
